@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Ejercicio 8 - Votaciones en gráfico</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .legend {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+      }
+      .legend-color {
+        width: 20px;
+        height: 10px;
+        margin-right: 5px;
+      }
+      .chart-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+      }
+      .back-button {
+        margin-top: 15px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container text-center mt-5">
+      <h1>Votaciones</h1>
+
+      <!-- Leyenda personalizada -->
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #FF6384;"></span>
+          Socialistas
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #36A2EB;"></span>
+          Liberales
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #FFCE56;"></span>
+          Animalistas
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #9B59B6;"></span>
+          Centristas
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #4CAF50;"></span>
+          Ecologistas
+        </div>
+      </div>
+
+      <!-- Botones para votar -->
+      <div class="my-3">
+        <button class="btn btn-outline-primary m-1" onclick="vote(0)">Socialistas</button>
+        <button class="btn btn-outline-primary m-1" onclick="vote(1)">Liberales</button>
+        <button class="btn btn-outline-primary m-1" onclick="vote(2)">Animalistas</button>
+        <button class="btn btn-outline-primary m-1" onclick="vote(3)">Centristas</button>
+        <button class="btn btn-outline-primary m-1" onclick="vote(4)">Ecologistas</button>
+        <button class="btn btn-outline-danger m-1" onclick="reset()">Reset</button>
+      </div>
+
+      <!-- Gráfico de votación y botón "Back" en el mismo contenedor -->
+      <div class="chart-container text-center">
+        <canvas id="voteChart" width="400" height="400"></canvas>
+        <div class="back-button">
+          <a href="../index.html" class="btn btn-secondary mt-3">
+            <i class="fas fa-arrow-left"></i> Back
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
